@@ -1,21 +1,31 @@
-var primes = [2, 3, 5, 7];
-
-var book = {
-    topic: "JavaScript",
-    fat: true
-};
+console.log("=============================================================================================");
 
 var points = [
     {x:0, y:0},
-    {x:1, y:1},
+    {x:12, y:22},
+    {x:123, y:42},
 ]
 
-book.topic = "novo";
-book.author = "Isaak";
-book.contents = {};
+points.dist = function() {
+    var p1 = this[0];
+    var p2 = this[1];
+    var a = p2.x-p1.x;
+   var b = p2.y-p1.y;
+    // return Math.sqrt(a*a + b*b);
+    return p1;
+}
 
-console.log("O autor é: " + book["author"]);
-console.log(book["topic"]);
-console.log(primes[0]);
-console.log("O length do 'primes' é: " + primes.length);
-console.log(points[0]);
+points.sum = function(a) {
+    var k1 = this[a].x;
+    var k2 = this[a].y;
+    return k1 + k2;
+}
+
+var a = points.dist();
+var b = points.sum(2);
+
+console.log(a);
+console.log("---------");
+console.log(points);
+console.log("---------");
+console.log(b);
